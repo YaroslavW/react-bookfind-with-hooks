@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './Components/Header';
 import Books from './Components/Books';
+import SearchInput from './Components/SearchInput';
 import {Container, Row, Col} from 'react-bootstrap';
 import './App.css';
 
@@ -35,6 +36,7 @@ class App extends Component {
       <div>
         <Header />
         <Container>
+          <SearchInput onChange={this.handleChange.bind(this)} value={this.state.text} />
           <Row>
             <Col xs={12} md={12} lg={12}>     
               <Books books={this.state.books} />
