@@ -37,7 +37,7 @@ class App extends Component {
         <Container>
           <Row>
             <Col xs={12} md={12} lg={12}>     
-              <Books />
+              <Books books={this.state.books} />
             </Col>
           </Row>
         </Container>
