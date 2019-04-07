@@ -16,21 +16,20 @@ class App extends Component {
   componentWillMount() {
     this.getBooks();
   }
-  getBooks() {
+  getBooks(text=this.state.text) {
     axios.request({
       method: 'get',
-      url: 'https://www.googleapis.com/books/v1/volumes?q=' + this.state.text
+      url: 'https://www.googleapis.com/books/v1/volumes?q=' + text
     }).then((response) => {
       this.setState({
-        books: response.data.items
-      }, () => { console.log(this.state) });
+        books: response.data.items 
+      },  () => { console.log(this.state.text) } );
     }).catch((error) => {
       console.log(error)
     })
   }
   handleChange(text) {
-    this.setState({ text: text }, this.getBooks());
-    // console.log(text);
+    this.setState({ text: text }, this.getBooks(text))
   }
   render() {
     return (

@@ -18,7 +18,7 @@ const SearchInput = (props) => {
           placeholder="Search Books..."
           
         />
-          <Button onClick={getValue.bind(this)} variant="outline-secondary">Button</Button>
+          <Button onClick={getValue} variant="outline-secondary">Button</Button>
         </InputGroup>
       </Card>
     )
