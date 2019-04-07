@@ -1,24 +1,25 @@
-import React, { useState } from 'react';
-import { Card, FormControl } from 'react-bootstrap';
+import React from 'react';
+import { Card, FormControl, InputGroup, Button, } from 'react-bootstrap';
 
 const SearchInput = (props) => {
 
-const [value, setValue] = useState(props.value);
-
-  function onChange(e) {
-    setValue( e.target.value );
-    props.onChange(value);
+  function getValue() {
+    let input = document.getElementById('input').value;
+    props.getValue(input);
+    document.getElementById('input').value = "";
   }
-
-  
     return (
       <Card>
+        <InputGroup className="mb-12">
         <FormControl
+          id='input'
           type="text"
-          value={value}
+          // value={value}
           placeholder="Search Books..."
-          onChange={onChange.bind(this)}
+          
         />
+          <Button onClick={getValue.bind(this)} variant="outline-secondary">Button</Button>
+        </InputGroup>
       </Card>
     )
 }

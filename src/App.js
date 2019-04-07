@@ -30,13 +30,14 @@ class App extends Component {
   }
   handleChange(text) {
     this.setState({ text: text }, this.getBooks());
+    // console.log(text);
   }
   render() {
     return (
       <div>
         <Header />
         <Container>
-          <SearchInput onChange={this.handleChange.bind(this)} value={this.state.text} />
+          <SearchInput getValue={this.handleChange.bind(this)}  />
           <Row>
             <Col xs={12} md={12} lg={12}>     
               <Books books={this.state.books} />
