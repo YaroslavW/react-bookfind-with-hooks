@@ -14,7 +14,6 @@ const SearchInput = (props) => {
         <FormControl
           id='input'
           type="text"
-          // value={value}
           placeholder="Search Books..."
           
         />
