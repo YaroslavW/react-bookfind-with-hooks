@@ -23,7 +23,7 @@ class App extends Component {
     }).then((response) => {
       this.setState({
         books: response.data.items 
-      },  () => { console.log(this.state.text) } );
+      });
     }).catch((error) => {
       console.log(error)
     })
